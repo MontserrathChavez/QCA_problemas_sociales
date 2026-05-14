@@ -25,7 +25,7 @@ QCAfit(x = datos[, c("A", "B", "C","D")], y = datos$Resultados, necessity = TRUE
 ##### Minimización Booleana
 minimize(input = tv, include = "all", details = TRUE)
 
-### Excel
+### Base de datos
 [qcar.xlsx](https://github.com/user-attachments/files/27744153/qcar.xlsx)
 
 ### Resultados
