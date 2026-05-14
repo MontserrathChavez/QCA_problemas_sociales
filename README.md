@@ -1,16 +1,17 @@
 # QCA_problemas_sociales
 En este trabajo se muestra una tabla de la verdad, donde se analiza que provoca los problemas sociales 
 
-## Formulas
+### Formulas
 
 install.packages(readxl)
 library(readxl)
 datos<-read_excel("qcar .xlsx")
 list.files()
 View(datos)
-### Tabla de Verdad
-# incl.cut. Un puntaje de 1 indica que la configuración de condiciones es suficiente para el resultado
 
+### Tabla de Verdad
+
+ incl.cut. Un puntaje de 1 indica que la configuración de condiciones es suficiente para el resultado
 install.packages("QCA")
 install.packages("SetMethods")
 library(SetMethods)
@@ -18,9 +19,10 @@ library(QCA)
 summary(datos)
 tv <- truthTable(data = datos, outcome = "Resultados", conditions = c("A,B,C,D"), incl.cut= 1, complete=TRUE)
 tv
-# Condiciones Necesarias 
+
+##### Condiciones Necesarias 
 QCAfit(x = datos[, c("A", "B", "C","D")], y = datos$Resultados, necessity = TRUE)
-# Minimización Booleana
+##### Minimización Booleana
 minimize(input = tv, include = "all", details = TRUE)
 
 ### Excel
